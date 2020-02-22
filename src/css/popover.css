@@ -1,0 +1,24 @@
+ion-popover {
+    --ion-background-color: white;
+    --ion-item-text-color: var(--ion-color-dark);
+}
+
+ion-popover ion-list-header {
+    --color: var(--ion-color-dark);
+}
+
+ion-popover ion-item {
+    --color: var(--ion-color-dark);
+    --inner-border-width: 0;
+}
+
+ion-popover[class*="sc-ion-popover"].menu {
+    --min-width: 60vw;
+    --height: 60vh;
+}
+
+ion-popover.menu ion-list.list-ios {
+    margin-bottom: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
