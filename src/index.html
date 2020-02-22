@@ -101,8 +101,27 @@
           <h1 slot="title">Ionic React</h1>
           <div no-shadow slot="content">
             <h3>Build iOS, Android, Desktop, and Progressive Web Apps with Web Technology</h3>
+            <a href="http://ionicframework.com/react">ionicframework.com/react</a>
           </div>
         </deckgo-slide-title>
+
+        <deckgo-slide-author img-src="assets/img/ionitron.png">
+          <h1 slot="title">About me</h1>
+          <div slot="author">
+            <h2>About me</h2>
+            <p>My name and my bio</p>
+          </div>
+          <deckgo-social slot="social-link" twitter="">
+            <ion-icon alt="Me on Twitter" slot="icon" name="logo-twitter"></ion-icon>
+          </deckgo-social>
+          <deckgo-social slot="social-link" linkedin="">
+            <ion-icon alt="Me on Linkedin" slot="icon" name="logo-linkedin"></ion-icon>
+          </deckgo-social>
+          <deckgo-social slot="social-link" medium="">
+            <img style="width: 1em;" alt="Me on Medium"
+              slot="icon" src="https://deckdeckgo.com/assets/icons/medium.svg" />
+          </deckgo-social>
+        </deckgo-slide-author>
 
         <deckgo-slide-content
           style="--background: white; --color: var(--ion-color-tertiary); --ion-item-background: white;">
@@ -116,7 +135,7 @@
             </ion-item>
             <ion-item style="--color: var(--ion-color-dark);">
               <ion-label text-wrap>️🚀
-                Built on Web Technology, Ionic apps can be built in the browser and deployed
+                Built on <strong>Web Technology</strong>, Ionic apps can be built in the browser and deployed
                 on nearly any platform
               </ion-label>
             </ion-item>
@@ -141,6 +160,70 @@
           </ion-list>
         </deckgo-slide-content>
 
+        <deckgo-slide-content
+          style="--background: white; --color: var(--ion-color-tertiary); --ion-item-background: white;">
+          <h2 slot="title">What is Ionic React?</h2>
+          <ion-list slot="content" lines="none" padding-top>
+            <ion-item style="--color: var(--ion-color-dark);">
+              <ion-label text-wrap>️💯
+                100+ React Components for building native-quality apps with a single code base and web technology
+              </ion-label>
+            </ion-item>
+            <ion-item style="--color: var(--ion-color-dark);">
+              <ion-label text-wrap>🔩 Modals, menus, tabs, navigation, lists, cards, and more!</ion-label>
+            </ion-item>
+            <ion-item style="--color: var(--ion-color-dark);">
+              <ion-label text-wrap>️🎨 Powerful theming capabilities and support for Dark Mode</ion-label>
+            </ion-item>
+            <ion-item style="--color: var(--ion-color-dark);">
+              <ion-label text-wrap>️🔀
+                Built-in routing for native-style navigation and high-performance transitions
+              </ion-label>
+            </ion-item>
+            <ion-item style="--color: var(--ion-color-dark);">
+              <ion-label text-wrap>️💡
+                Uses <code>react-dom</code>, so is compatible with majority of React libraries
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </deckgo-slide-content>
+
+        <deckgo-slide-content
+          style="--background: white; --color: var(--ion-color-tertiary); --ion-item-background: white;">
+          <h2 slot="title">Components</h2>
+          <div slot="content">
+            <ion-button>Buttons</ion-button>
+            <ion-card>
+              <ion-img src="/assets/myImg.png"></ion-img>
+              <ion-card-content>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+                <p>
+                  Here’s a small text description for the card component.
+                  Nothing more, nothing less.
+                </p>
+                <ion-item>
+                  <ion-button fill="solid">Action</ion-button>
+                  <ion-icon name="heart" slot="end"></ion-icon>
+                  <ion-icon name="share" slot="end"></ion-icon>
+                </ion-item>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </deckgo-slide-content>
+
+        <deckgo-slide-code src="assets/code/card.jsx"
+          style="--code-margin-bottom: 6rem; --background: var(--ion-color-dark); --color: var(--ion-color-light); --code-color: var(--ion-color-light);">
+          <h2 slot="title">Example</h2>
+
+          <div slot="info" padding style="--deckgo-show-info-background: rgba(var(--ion-color-dark-rgb), 0.8)">
+            <p text-center>Tips: click on the code to switch between horizontal and vertical scroll</p>
+            <ion-icon name="move" style="font-size: 4rem;"></ion-icon>
+          </div>
+        </deckgo-slide-code>
+
         <deckgo-slide-split
           style="color: var(--ion-color-tertiary); --slide-split-color-start: white; --slide-split-align: center; --slide-split-text-align: center; --slide-split-background-end: white; --slide-split-color-end: var(--ion-color-tertiary);">
           <h1 slot="title">Progressive Web App</h1>
@@ -152,23 +235,6 @@
           </div>
         </deckgo-slide-split>
 
-        <deckgo-slide-author img-src="https://secure.meetupstatic.com/photos/member/9/c/4/2/member_272620002.jpeg">
-          <h1 slot="title">Templates</h1>
-          <div slot="author">
-            <h2>Templates</h2>
-            <p>Use predefined slides for quick editing ⚡ Like this template to introduce the author of the
-              talk 🎤</p>
-          </div>
-          <deckgo-social slot="social-link" twitter="daviddalbusco">
-            <ion-icon alt="David on Twitter" slot="icon" name="logo-twitter"></ion-icon>
-          </deckgo-social>
-          <deckgo-social slot="social-link" linkedin="david-dal-busco">
-            <ion-icon alt="David on Linkedin" slot="icon" name="logo-linkedin"></ion-icon>
-          </deckgo-social>
-          <deckgo-social slot="social-link" medium="david.dalbusco"><img style="width: 1em;" alt="David on Medium"
-              slot="icon" src="https://deckdeckgo.com/assets/icons/medium.svg" />
-          </deckgo-social>
-        </deckgo-slide-author>
 
         <deckgo-slide-chart type="line" grid="true" date-pattern="dd.MM.yyyy" animation="true"
           src="https://raw.githubusercontent.com/deckgo/deckdeckgo/master/webcomponents/charts/showcase/data-line-multiple.csv"
