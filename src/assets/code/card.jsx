@@ -6,18 +6,18 @@ import {
 
 const MyComponent = () => (
   <IonCard>
-    <IonImg src="/assets/myImg.png"></IonImg>
+    <IonImg src="assets/img/madison.jpg"></IonImg>
     <IonCardContent>
       <IonCardHeader>
-        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-        <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Destination</IonCardSubtitle>
+        <IonCardTitle>Madison, WI</IonCardTitle>
       </IonCardHeader>
       <p>
-        Here’s a small text description for the card component.
-        Nothing more, nothing less.
+        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, 
+        Madison was named the capital of the Wisconsin Territory in 1836.
       </p>
       <IonItem>
-        <IonButton fill="solid">Action</IonButton>
+        <IonButton fill="solid">Learn More</IonButton>
         <IonIcon icon={heart} slot="end"></IonIcon>
         <IonIcon icon={share} slot="end"></IonIcon>
       </IonItem>

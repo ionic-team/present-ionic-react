@@ -1,4 +1,6 @@
-# DeckDeckGo - Starter Kit
+# Ionic Present: React
+
+Present Ionic in your town using this presentation.
 
 Create a PWA presentation using Web Components, [Ionic](http://ionicframework.com) components and HTML or Markdown 🚀
 
@@ -31,14 +33,12 @@ The [DeckDeckGo website](https://github.com/deckgo/deckdeckgo-website) is a full
 To develop and run this starter kit locally, proceed as following:
 
 ```
-git clone https://github.com/deckgo/deckdeckgo-starter
-cd deckdeckgo-starter
+git clone https://github.com/ionic-team/present-ionic-react
+cd present-ionic-react
 npm install
 npm run start
 ```
 
-## License
+## Powered by DeckDeckGo
 
-MIT © [David Dal Busco](mailto:david.dalbusco@outlook.com) and [Nicolas Mattia](nicolas@nmattia.com)
-
-[DeckDeckGo]: https://deckdeckgo.com
+Presentation built with [DeckDeckGo]: https://deckdeckgo.com

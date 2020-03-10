@@ -19,14 +19,14 @@
   <meta property="og:description" content="Building mobile, desktop, and web apps with React and Ionic">
   <meta property="og:site_name" content="Ionic React">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://deckdeckgo.com">
-  <meta property="og:image" content="https://deckdeckgo.com/assets/img/deckdeckgo.png">
+  <meta property="og:url" content="https://ionicframework.com">
+  <meta property="og:image" content="https://ionicframework.com/img/meta/ionic-framework-og.png">
   <meta property="og:image:type" content="image/png">
 
-  <meta name="twitter:site" content="@deckdeckgo">
+  <meta name="twitter:site" content="@ionicframework">
   <meta name="twitter:title" content="Ionic React">
   <meta name="twitter:description" content="Building mobile, desktop, and web apps with React and Ionic">
-  <meta name="twitter:image:src" content="https://deckdeckgo.com/assets/img/deckdeckgo.png">
+  <meta name="twitter:image:src" content="https://ionicframework.com/img/meta/ionic-framework-og.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Favicon -->
@@ -47,6 +47,36 @@
           console.warn('No service worker registered');
         }
       });
+    }
+
+    async function showActionSheet() {
+      const actionSheet = document.createElement('ion-action-sheet');
+      actionSheet.header = "Albums";
+      actionSheet.buttons = [
+      {
+        text: 'Play',
+        icon: 'play-outline',
+        handler: () => {
+          console.log('Play clicked');
+        }
+      }, {
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash'
+      }, {
+        text: 'Share',
+        icon: 'share'
+      }, {
+        text: 'Favorite',
+        icon: 'heart'
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel'
+      }];
+
+      document.body.appendChild(actionSheet);
+      return actionSheet.present();
     }
   </script>
 
@@ -85,6 +115,10 @@
     ion-app.loading {
       display: none;
     }
+
+    h1, h2 {
+      color: var(--ion-color-tertiary);
+    }
   </style>
 
 </head>
@@ -101,7 +135,7 @@
           <h1 slot="title">Ionic React</h1>
           <div no-shadow slot="content">
             <h3>Build iOS, Android, Desktop, and Progressive Web Apps with Web Technology</h3>
-            <a href="http://ionicframework.com/react">ionicframework.com/react</a>
+            <a href="https://ionicframework.com/react">ionicframework.com/react</a>
           </div>
         </deckgo-slide-title>
 
@@ -123,8 +157,7 @@
           </deckgo-social>
         </deckgo-slide-author>
 
-        <deckgo-slide-content
-          style="--background: white; --color: var(--ion-color-tertiary); --ion-item-background: white;">
+        <deckgo-slide-content>
           <h2 slot="title">What is Ionic?</h2>
           <ion-list slot="content" lines="none" padding-top>
             <ion-item style="--color: var(--ion-color-dark);">
@@ -151,7 +184,7 @@
             </ion-item>
             <ion-item style="--color: var(--ion-color-dark);">
               <ion-label text-wrap>️⚔️
-                Backed by Ionic, a growing company in business to help teams build apps, offering support, enterprise-specific functionality, and DevOps services.
+                Backed by Ionic, a growing company that helps teams build apps, offering support, enterprise-specific functionality, and DevOps services.
               </ion-label>
             </ion-item>
             <ion-item>
@@ -182,143 +215,438 @@
             </ion-item>
             <ion-item style="--color: var(--ion-color-dark);">
               <ion-label text-wrap>️💡
-                Uses <code>react-dom</code>, so is compatible with majority of React libraries
+                Uses <code>react-dom</code> for compatibility with majority of React libraries
+              </ion-label>
+            </ion-item>
+            <ion-item style="--color: var(--ion-color-dark);">
+              <ion-label text-wrap>️⚛️
+                It's Just React! <code>React Router</code> for routing, <code>Jest + React Testing Library</code> for testing, 
+                & project setup with <code>Create React App</code>
               </ion-label>
             </ion-item>
           </ion-list>
         </deckgo-slide-content>
 
         <deckgo-slide-content
-          style="--background: white; --color: var(--ion-color-tertiary); --ion-item-background: white;">
+          style="--color: var(--ion-color-tertiary); ">
           <h2 slot="title">Components</h2>
           <div slot="content">
-            <ion-button>Buttons</ion-button>
-            <ion-card>
-              <ion-img src="/assets/myImg.png"></ion-img>
-              <ion-card-content>
-                <ion-card-header>
-                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                  <ion-card-title>Card Title</ion-card-title>
-                </ion-card-header>
-                <p>
-                  Here’s a small text description for the card component.
-                  Nothing more, nothing less.
-                </p>
-                <ion-item>
-                  <ion-button fill="solid">Action</ion-button>
-                  <ion-icon name="heart" slot="end"></ion-icon>
-                  <ion-icon name="share" slot="end"></ion-icon>
-                </ion-item>
-              </ion-card-content>
-            </ion-card>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-card>
+                    <img src="assets/img/madison.jpg"></ion-img>
+                    <ion-card-header>
+                      <ion-card-subtitle>Destination</ion-card-subtitle>
+                      <ion-card-title>Madison, WI</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, 
+                      Madison was named the capital of the Wisconsin Territory in 1836.
+                      <ion-item>
+                        <ion-button color="primary" fill="solid" slot="end">Learn More</ion-button>
+                        <ion-icon name="heart" slot="end" style="color: red;"></ion-icon>
+                        <ion-icon name="share" slot="end" style="color: black"></ion-icon>
+                      </ion-item>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <ion-list>
+                    <ion-item>
+                        <ion-label>Toggle</ion-label>
+                        <ion-toggle slot="start" name="blueberry"></ion-toggle>
+                    </ion-item>
+                    <ion-item>
+                      <ion-range min="-200" max="200" pin color="secondary">
+                        <ion-icon slot="start" size="small" name="contrast"></ion-icon>
+                        <ion-icon slot="end" name="contrast"></ion-icon>
+                      </ion-range>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Crescent Spinner</ion-label>
+                      <ion-spinner name="crescent"></ion-spinner>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label>Followers</ion-label>
+                      <ion-badge color="success" slot="end">22k</ion-badge>
+                    </ion-item>
+                    <ion-item>
+                      <ion-range min="1000" max="2000" step="100" value="1400" snaps color="danger">
+                        <ion-icon slot="start" size="small" color="danger" name="thermometer"></ion-icon>
+                        <ion-icon slot="end" color="danger" name="thermometer"></ion-icon>
+                      </ion-range>
+                    </ion-item>
+                    <ion-item>
+                      <ion-thumbnail slot="start">
+                        <ion-skeleton-text></ion-skeleton-text>
+                      </ion-thumbnail>
+                      <ion-label>
+                        <h3>
+                          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                        </h3>
+                        <p>
+                          <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                        </p>
+                        <p>
+                          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                        </p>
+                      </ion-label>
+                      </ion-item>
+                      <ion-item>
+                        <ion-fab vertical="top" >
+                          <ion-fab-button color="secondary">
+                            <ion-icon md="caret-forward" ios="chevron-forward-circle-outline"></ion-icon>
+                          </ion-fab-button>
+                          <ion-fab-list side="end">
+                            <ion-fab-button color="light">
+                              <ion-icon name="logo-facebook"></ion-icon>
+                            </ion-fab-button>
+                            <ion-fab-button color="light">
+                              <ion-icon name="logo-twitter"></ion-icon>
+                            </ion-fab-button>
+                            <ion-fab-button color="light">
+                              <ion-icon name="logo-vimeo"></ion-icon>
+                            </ion-fab-button>
+                            <ion-fab-button color="light">
+                              <ion-icon name="logo-google"></ion-icon>
+                            </ion-fab-button>
+                          </ion-fab-list>
+                        </ion-fab>
+                      </ion-item>
+                  </ion-list>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <ion-button  onclick="showActionSheet();" expand="block">Show Action Sheet</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            
+          </div>
+        </deckgo-slide-content>
+
+        <deckgo-slide-content
+          style="--color: var(--ion-color-tertiary); ">
+          <h2 slot="title">ion-card</h2>
+          <div slot="content">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-card>
+                    <img src="assets/img/madison.jpg"></ion-img>
+                    <ion-card-header>
+                      <ion-card-subtitle>Destination</ion-card-subtitle>
+                      <ion-card-title>Madison, WI</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, 
+                      Madison was named the capital of the Wisconsin Territory in 1836.
+                      <ion-item>
+                        <ion-button color="primary" fill="solid" slot="end">Learn More</ion-button>
+                        <ion-icon name="heart" slot="end" style="color: red;"></ion-icon>
+                        <ion-icon name="share" slot="end" style="color: black"></ion-icon>
+                      </ion-item>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <deckgo-highlight-code src="assets/code/card.jsx" style="--deckgo-highlight-code-font-size: 18px">
+                  </deckgo-highlight-code>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </div>
         </deckgo-slide-content>
 
         <deckgo-slide-code src="assets/code/card.jsx"
           style="--code-margin-bottom: 6rem; --background: var(--ion-color-dark); --color: var(--ion-color-light); --code-color: var(--ion-color-light);">
-          <h2 slot="title">Example</h2>
-
+          <h2 slot="title">remove in favor of previous slide?</h2>
           <div slot="info" padding style="--deckgo-show-info-background: rgba(var(--ion-color-dark-rgb), 0.8)">
             <p text-center>Tips: click on the code to switch between horizontal and vertical scroll</p>
             <ion-icon name="move" style="font-size: 4rem;"></ion-icon>
           </div>
         </deckgo-slide-code>
 
-        <deckgo-slide-split
-          style="color: var(--ion-color-tertiary); --slide-split-color-start: white; --slide-split-align: center; --slide-split-text-align: center; --slide-split-background-end: white; --slide-split-color-end: var(--ion-color-tertiary);">
-          <h1 slot="title">Progressive Web App</h1>
-          <h3 slot="start" style="color: var(--ion-color-dark);">Publish your presentation as a
-            <strong>Progressive Web App</strong> with <strong>offline</strong> support</h3>
-          <div slot="end" style="text-align: center; width: 100%;">
-            <img data-src="https://deckdeckgo.com/assets/img/deckdeckgo-logo.svg" style="width: 20vw;"
-              alt="Publish your presentation as a Progressive Web App with offline support" />
-          </div>
-        </deckgo-slide-split>
-
-
-        <deckgo-slide-chart type="line" grid="true" date-pattern="dd.MM.yyyy" animation="true"
-          src="https://raw.githubusercontent.com/deckgo/deckdeckgo/master/webcomponents/charts/showcase/data-line-multiple.csv"
-          ticks="5" style="--background: white;--color: black;">
-          <h3 slot="title">Or the template for charts</h3>
-        </deckgo-slide-chart>
-
-        <deckgo-slide-gif style="background: white;" src="https://media.giphy.com/media/xUA7baWfTjfHGLZc3e/giphy.gif"
-          alt="Template for gif" fullscreen="true">
-          <h1 slot="title">Gif template</h1>
-          <h1 slot="header" style="font-weight: 300; --background: white; --color: var(--ion-color-dark);">Or
-            this template...</h1>
-          <h2 slot="footer" style="font-weight: 300; --background: white; --color: var(--ion-color-dark);">
-            ...for GIFs</h2>
-        </deckgo-slide-gif>
-
-        <deckgo-slide-poll>
-          <h1 slot="question" style="overflow: visible">Interact with your audience with a live poll?</h1>
-          <p slot="answer-1">Sure cool</p>
-          <p slot="answer-2">Not interested</p>
-          <p slot="answer-3">Yes</p>
-          <p slot="how-to">Go to <a href="https://deckdeckgo.com/poll">deckdeckgo.com/poll</a> and use the
-            code {0}</p>
-          <p slot="awaiting-votes">Awaiting first votes</p>
-        </deckgo-slide-poll>
-
-        <deckgo-slide-title>
-          <h2 slot="title">Reveal</h2>
-          <p no-shadow slot="content" style="display: flex;">
-            <deckgo-reveal style="width: auto;"><span>A</span><span
-                style="margin-left: 8px; margin-right: 8px;">journey</span><span style="margin-right: 8px;">miles
-                thousand a of</span><span style="color: var(--ion-color-warning);"
-                style="margin-right: 8px;"><strong>step single
-                  a with begins</strong> - </span><span>Laozi</span></deckgo-reveal>
-          </p>
-        </deckgo-slide-title>
-
-        <deckgo-slide-youtube src="https://www.youtube.com/watch?v=3o3oGBTTRSs"
-          style="--background: white; --color: var(--ion-color-tertiary);">
-          <h2 slot="title">Remote Control</h2>
-        </deckgo-slide-youtube>
-
-        <deckgo-slide-code src="https://demo.deckdeckgo.com/assets/code/deckdeckgo-slide-code-example.txt"
-          style="--code-margin-bottom: 6rem; --background: var(--ion-color-dark); --color: var(--ion-color-light); --code-color: var(--ion-color-light);">
-          <h2 slot="title">Showcase your code</h2>
-
-          <div slot="info" padding style="--deckgo-show-info-background: rgba(var(--ion-color-dark-rgb), 0.8)">
-            <p text-center>Tips: click on the code to switch between horizontal and vertical scroll</p>
-            <ion-icon name="move" style="font-size: 4rem;"></ion-icon>
-          </div>
-        </deckgo-slide-code>
-
-        <deckgo-slide-qrcode content="https://deckdeckgo.com" style="--deckgo-qrcode-color-fill: black;">
-          <h1 slot="title">QR Code</h1>
-          <p slot="content">Display a QR code to let your audience get your slides as a PWA without any delay
-          </p>
-        </deckgo-slide-qrcode>
-
-        <deckgo-slide-title style="--background: var(--ion-color-dark); --color: var(--ion-color-light);">
-          <h2 slot="title">Get started now 🔥</h2>
+        <deckgo-slide-content
+          style="--color: var(--ion-color-tertiary); ">
+          <h2 slot="title">Gestures & Animations</h2>
           <div slot="content">
-            <div style="padding: 32px;">
-              <code style="background-image: var(--ion-color-dark);" padding>
-                            $ npm init deckdeckgo
-                        </code>
-            </div>
-
-            <p style="margin-bottom: 0; margin-top: 16px; font-size: 0.5em;">
-              Dive deeper with the <a href="https://docs.deckdeckgo.com">Getting Started guide</a>
-            </p>
-
-            <p style="margin-bottom: 0; margin-top: 48px; font-size: 0.5em;">
-              Created by David Dal Busco
-            </p>
-            <p no-margin no-padding style="font-size: 0.8em; margin-top: 8px;">
-              <a href="https://twitter.com/daviddalbusco">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-              <a href="https://www.linkedin.com/in/david-dal-busco/">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-            </p>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="5">
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🎨
+                      Up to date with <strong>latest UI designs</strong>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️📖
+                      <strong>Swiping gestures</strong> between views
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🚀
+                      Each component <strong>adapts its look</strong> to the platform the app is running on
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <div style="padding-bottom: 15px">iOS large title & native page transitions:</div>
+                  <video controls autoplay muted loop style="width: 75%; height: 50%;">
+                    <source src="assets/video/large-title-dark.mov">
+                  </video>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </div>
-        </deckgo-slide-title>
+        </deckgo-slide-content>
+
+        <!-- https://ionicframework.com/docs/react/navigation -->
+        <deckgo-slide-content
+          style="--color: var(--ion-color-tertiary); ">
+          <h2 slot="title">Routing/Navigation</h2>
+          <div slot="content">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🎨
+                      Rich page transitions powered by IonReactRouter
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️📖
+                      React Router under the hood
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🚀
+                      Use IonReactRouter in place of BrowserRouter
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <deckgo-highlight-code src="assets/code/routing-app.jsx" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+                  </deckgo-highlight-code>
+                  <deckgo-highlight-code src="assets/code/routing-nested.jsx" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+                  </deckgo-highlight-code>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </deckgo-slide-content>
+
+        <deckgo-slide-code src="assets/code/navigation.jsx">
+          <h1 slot="title">Navigation</h1>
+          <div slot="notes">Here, the UsersListPage uses IonItem's routerLink prop to specify 
+            the route to go to when the item is tapped/clicked. Each of these components also have 
+            a routerDirection prop to explicitly set the type of page transition to use ("back", 
+            "forward", or "none").
+          </div>
+        </deckgo-slide-code>
+
+        <!-- https://ionicframework.com/docs/react/testing -->
+        <deckgo-slide-content
+          style="--color: var(--ion-color-tertiary); ">
+          <h2 slot="title">Testing</h2>
+          <div slot="content">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🏃‍♂️
+                      Jest: Powerful test runner
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🦸‍♀️
+                      React Testing Library: test like an actual user; more
+                      reliable and less brittle
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🛠
+                      Ionic React Testing Utils: mocking Ionic Web Components
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <deckgo-highlight-code src="assets/code/test-todos.jsx" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+                  </deckgo-highlight-code>
+                  <deckgo-highlight-code src="assets/code/test-unit.jsx" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+                  </deckgo-highlight-code>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </deckgo-slide-content>
+
+        <!-- https://ionicframework.com/docs/react/pwa -->
+        <deckgo-slide-content
+          style="--color: var(--ion-color-tertiary); ">
+          <h2 slot="title">Progressive Web Apps</h2>
+          <div slot="content">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🏃‍♂️
+                      Available out-of-the-box
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🦸‍♀️
+                      Preconfigured Service Worker with cache-first strategy
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🛠
+                      Easy deployment using any cloud provider
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <deckgo-highlight-code src="assets/code/pwa.jsx" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+                  </deckgo-highlight-code>
+                  <code style="background-image: var(--ion-color-dark);" padding>
+                    <ul style="list-style-type:none; padding-top: 40px">
+                    <li>$ ionic build --prod</li>
+                    <li>$ now --prod</li>
+                    </ul>
+                  </code>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </deckgo-slide-content>
+
+        <deckgo-slide-content
+          style="--color: var(--ion-color-tertiary); ">
+          <h2 slot="title">Native Access</h2>
+          <div slot="content">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🚀
+                      Cross-platform runtime: iOS, Android, Desktop, and the Web
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🕸️
+                      Web APIs focused on web standards
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️👩‍💻
+                      "Code Once, Configure Everywhere"
+                    </ion-label>
+                  </ion-item>
+                  <ion-item style="--color: var(--ion-color-dark);">
+                    <ion-label text-wrap>️🤝
+                      Inspiration: Cordova, React Native, and Turbolinks
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <deckgo-highlight-code src="assets/code/cap-camera.ts" 
+                    style="--deckgo-highlight-code-font-size: 14px">
+                  </deckgo-highlight-code>
+                  <img src="assets/img/logo-capacitor.png" />
+                </ion-col>
+                <ion-col style="padding-left:40px">
+                  <deckgo-highlight-code src="assets/code/cap-notifications.ts" 
+                    style="--deckgo-highlight-code-font-size: 14px">
+                  </deckgo-highlight-code>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </deckgo-slide-content>
+
+        <deckgo-slide-content
+        style="--color: var(--ion-color-tertiary); ">
+        <h2 slot="title">The Ionic Platform</h2>
+        <div slot="content">
+          <h3>A world-class app building experience.</h3>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-item style="--color: var(--ion-color-dark);">
+                  <ion-label text-wrap>️⚛️
+                    Framework agnostic
+                  </ion-label>
+                </ion-item>
+                <ion-item style="--color: var(--ion-color-dark);">
+                  <ion-label text-wrap>️🖼
+                    Beautiful, cross-platform UI components
+                  </ion-label>
+                </ion-item>
+                <ion-item style="--color: var(--ion-color-dark);">
+                  <ion-label text-wrap>️📲
+                    Native runtime to reach iOS, Android, PWA, and Desktop
+                  </ion-label>
+                </ion-item>
+                <ion-item style="--color: var(--ion-color-dark);">
+                  <ion-label text-wrap>️🤝
+                    Integrate with everything
+                  </ion-label>
+                </ion-item>
+                <ion-item style="--color: var(--ion-color-dark);">
+                  <ion-label text-wrap>️⚙️
+                    Continuous mobile DevOps
+                  </ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col style="padding-left:40px">
+                <img src="assets/img/ionic-platform.png" />
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </deckgo-slide-content>
+
+      <deckgo-slide-title style="--background: var(--ion-color-dark); --color: var(--ion-color-light);">
+        <h2 slot="title">Get started now 🚀</h2>
+        <div slot="content">
+          <div style="padding: 32px;">
+            <code style="background-image: var(--ion-color-dark);" padding>
+              <ul style="list-style-type:none;">
+                <li>$ npm install -g @ionic/cli</li>
+                <li>$ ionic start myApp --type=react</li>
+              </ul>
+            </code>
+          </div>
+
+          <p style="margin-bottom: 0; margin-top: 16px; font-size: 0.5em;">
+            <ul style="list-style-type:none;">
+              <li>
+                Dive deeper: <a href="https://ionicframework.com/react">ionicframework.com/react</a>
+              </li>
+              <li>
+                Tutorial: <a href="https://ionicframework.com/docs/react/your-first-app">Build your first app</a>
+              </li>
+          </ul>
+          </p>
+
+          <p style="margin-bottom: 0; margin-top: 48px; padding-bottom: 10px; font-size: 0.5em;">
+            Built by Ionic 💙
+          </p>
+
+          <div id="twitter-share" class="animated bounceInUp">
+            <a href="https://twitter.com/Ionicframework" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @Ionicframework</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+            <a href="https://twitter.com/share" class="twitter-share-button" data-text="Present Ionic Framework in your town!" data-via="Ionicframework" data-size="large" data-hashtags="presentionic" data-dnt="true" data-count="none" data-related="maxlynch,adamdbradley,benjsperry,drifty">Share this presentation</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+        </div>
+      </deckgo-slide-title>
 
         <!-- END: Edit your slides -->
 
