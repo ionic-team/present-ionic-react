@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  IonCard, IonCardContent, IonCardHeader, IonCardSubtitle,
-  IonCardTitle, IonItem, IonButton, IonIcon
-} from '@ionic/react';
+import { IonCard, IonCardContent, /* snip */ } from '@ionic/react';
 
 const MyComponent = () => (
   <IonCard>
@@ -12,10 +9,7 @@ const MyComponent = () => (
         <IonCardSubtitle>Destination</IonCardSubtitle>
         <IonCardTitle>Madison, WI</IonCardTitle>
       </IonCardHeader>
-      <p>
-        Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, 
-        Madison was named the capital of the Wisconsin Territory in 1836.
-      </p>
+      <p>/** snip */</p>
       <IonItem>
         <IonButton fill="solid">Learn More</IonButton>
         <IonIcon icon={heart} slot="end"></IonIcon>

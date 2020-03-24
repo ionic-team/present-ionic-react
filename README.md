@@ -1,6 +1,6 @@
 # Ionic Present: React
 
-Present Ionic in your town using this presentation.
+Present Ionic in your town using this pre-built presentation on Ionic React.
 
 Create a PWA presentation using Web Components, [Ionic](http://ionicframework.com) components and HTML or Markdown 🚀
 
