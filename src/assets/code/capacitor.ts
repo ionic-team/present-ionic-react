@@ -19,5 +19,4 @@ async takePicture() {
       }
     ]
   });
-  
 }
