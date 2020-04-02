@@ -3,18 +3,23 @@ import { IonCard, IonCardContent, /* snip */ } from '@ionic/react';
 
 const MyComponent = () => (
   <IonCard>
-    <IonImg src="assets/img/madison.jpg"></IonImg>
+    <IonCardHeader>
+      <IonCardSubtitle>Your Daily List</IonCardSubtitle>
+      <IonCardTitle>Ionic Apps We Think You'll Love.</IonCardTitle>
+    </IonCardHeader>
     <IonCardContent>
-      <IonCardHeader>
-        <IonCardSubtitle>Destination</IonCardSubtitle>
-        <IonCardTitle>Madison, WI</IonCardTitle>
-      </IonCardHeader>
-      <p>/** snip */</p>
-      <IonItem>
-        <IonButton fill="solid">Learn More</IonButton>
-        <IonIcon icon={heart} slot="end"></IonIcon>
-        <IonIcon icon={share} slot="end"></IonIcon>
-      </IonItem>
+      <IonList>
+        <IonItem>
+          <IonThumbnail slot="start">
+            <IonImg src="assets/img/logo-sworkit.png"></IonImg>
+          </IonThumbnail>
+          <IonLabel>
+            <h3>Sworkit</h3>
+            <p>The number one fitness app</p>
+          </IonLabel>
+        </IonItem>
+        /* snip */
+      </IonList>
     </IonCardContent>
   </IonCard>
 );

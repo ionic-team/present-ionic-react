@@ -34,14 +34,6 @@ ion-content deckgo-slide-split > *[slot="start"] {
     text-align: left;
 }
 
-/* Twitter share buttons use iframes too, so use class for Ionic Docs demo app iframe */
-.demo-iframe {
-    border: 8px solid #222;
-    border-radius: 32px;
-    max-height: 600px;
-    margin-top: 125px;
-}
-
 h1, h2 {
     color: #010610;
     font-weight: 700 !important;
@@ -52,8 +44,34 @@ deckgo-slide-content div h2 {
     padding-top: 20%;
 }
 
-h3, a {
+/* Arrange each social icon onto separate line and apply spacing between each */
+deckgo-social {
+    padding-top: 30px;
+}
+
+h3 {
     color: #445B78 !important;
     font-weight: 400 !important;
     letter-spacing: -0.016em;
+}
+
+a {
+    color: #3880FF !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.016em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.apps-card ion-list ion-thumbnail {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    --border-radius: 14px;
+}
+
+.apps-card h3 {
+    padding: 0px;
 }

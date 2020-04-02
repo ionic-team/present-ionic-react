@@ -6,6 +6,8 @@ Simply clone this repository, add your info to the "About Me" slide, then presen
 
 The best part? This is a progressive web app (PWA) built using Web Components and [Ionic Framework](http://ionicframework.com) components. 🚀
 
+View it live here: [https://present-react.ionicframework.com/](https://present-react.ionicframework.com/)
+
 ## How to Use
 
 To develop and run locally, just clone the repository, install all dependencies, then start it on localhost:
