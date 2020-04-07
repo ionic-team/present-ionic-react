@@ -48,6 +48,21 @@
         }
       });
     }
+
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+      return t;
+      }(document, "script", "twitter-wjs"));
   </script>
 
   <link rel="manifest" href="manifest.json">
@@ -108,6 +123,7 @@
           <img slot="end" src="assets/img/ionic-react-icon.png" />
         </deckgo-slide-split>
 
+        <!-- Add/remove social details as needed -->
         <deckgo-slide-author img-src="assets/img/ionitron.png">
           <div slot="notes" show>Add your details here.</div>
           <h1 slot="title">My Name</h1>
@@ -268,69 +284,64 @@
         </deckgo-slide-split>
 
         <!-- https://ionicframework.com/docs/api/card -->
-        <deckgo-slide-content>
+        <deckgo-slide-split>
           <div slot="notes" show>Example of Ionic Card component alongside actual code</div>
-          <h2 slot="title">&lt;IonCard&gt;</h2>
-          <div slot="content">
-            <ion-grid>
-              <ion-row>
-                <ion-col size="4">
-                  <ion-card class="apps-card">
-                    <ion-card-header>
-                      <ion-card-subtitle>Your Daily List</ion-card-subtitle>
-                      <ion-card-title>Ionic Apps We Think You'll Love.</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>
-                      <ion-list>
-                        <ion-item>
-                          <ion-thumbnail slot="start">
-                            <img src="/assets/img/logo-sworkit.png"/>
-                          </ion-thumbnail>
-                          <ion-label>
-                            <h3>Sworkit</h3>
-                            <p>The number one fitness app</p>
-                          </ion-label>
-                        </ion-item>
-                        <ion-item>
-                          <ion-thumbnail slot="start">
-                            <img src="/assets/img/logo-untappd.png"/>
-                          </ion-thumbnail>
-                          <ion-label>
-                            <h3>Untappd</h3>
-                            <p>Discover and share beer</p>
-                          </ion-label>
-                        </ion-item>
-                        <ion-item>
-                          <ion-thumbnail slot="start">
-                            <img src="/assets/img/logo-shipt.png"/>
-                          </ion-thumbnail>
-                          <ion-label>
-                            <h3>Shipt</h3>
-                            <p>Bring the store to your door</p>
-                          </ion-label>
-                        </ion-item>
-                        <ion-item lines="none">
-                          <ion-thumbnail slot="start">
-                            <img src="/assets/img/logo-amtrak.png"/>
-                          </ion-thumbnail>
-                          <ion-label>
-                            <h3>Amtrak</h3>
-                            <p>Book a trip today</p>
-                          </ion-label>
-                        </ion-item>
-                      </ion-list>
-                    </ion-card-content>
-                  </ion-card>
-                </ion-col>
-                <ion-col style="padding-left:40px">
-                  <deckgo-highlight-code src="assets/code/card.jsx" 
-                    style="--deckgo-highlight-code-font-size: 16px">
-                  </deckgo-highlight-code>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+          <div slot="title" style="display: none;">IonCard</div>
+          <div slot="start">
+          <h2>&lt;IonCard&gt;</h2>
+            <ion-card class="apps-card">
+              <ion-card-header>
+                <ion-card-subtitle>Your Daily List</ion-card-subtitle>
+                <ion-card-title>Ionic Apps We Think You'll Love.</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-list>
+                  <ion-item>
+                    <ion-thumbnail slot="start">
+                      <img src="/assets/img/logo-sworkit.png"/>
+                    </ion-thumbnail>
+                    <ion-label>
+                      <h3>Sworkit</h3>
+                      <p>The number one fitness app</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-thumbnail slot="start">
+                      <img src="/assets/img/logo-untappd.png"/>
+                    </ion-thumbnail>
+                    <ion-label>
+                      <h3>Untappd</h3>
+                      <p>Discover and share beer</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-thumbnail slot="start">
+                      <img src="/assets/img/logo-shipt.png"/>
+                    </ion-thumbnail>
+                    <ion-label>
+                      <h3>Shipt</h3>
+                      <p>Bring the store to your door</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item lines="none">
+                    <ion-thumbnail slot="start">
+                      <img src="/assets/img/logo-amtrak.png"/>
+                    </ion-thumbnail>
+                    <ion-label>
+                      <h3>Amtrak</h3>
+                      <p>Book a trip today</p>
+                    </ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
           </div>
-        </deckgo-slide-content>
+          <p slot="end">
+            <deckgo-highlight-code src="assets/code/card.jsx" 
+                  style="--deckgo-highlight-code-font-size: 16px">
+            </deckgo-highlight-code>
+          </p>
+        </deckgo-slide-split>
 
         <!-- https://ionicframework.com/docs/utilities/animations and 
              https://ionicframework.com/docs/utilities/gestures
@@ -363,6 +374,17 @@
         </div>
           <video slot="end" autoplay muted loop>
             <source src="assets/video/large-title-dark.mov">
+          </video>
+        </deckgo-slide-split>
+
+        <deckgo-slide-split>
+          <div slot="notes" show>Ionic implements all native animation/gesture details so you can focus on building your app.</div>
+          <div slot="title" style="display: none;">Swipe to Close Modal</div>
+          <div slot="start">
+          <h2>Swipe to Close Modal</h2>
+        </div>
+          <video slot="end" autoplay muted loop>
+            <source src="assets/video/modal-light.mov">
           </video>
         </deckgo-slide-split>
 
@@ -449,22 +471,17 @@
                   </ion-label>
                 </ion-item>
                 <ion-item>
-                  <ion-label text-wrap>️️✓ Easy deployment:
+                  <ion-label text-wrap>️️✓ Easy deployment
                   </ion-label>
-                </ion-item>
-                <ion-item>
-                  <code style="background-image: var(--ion-color-dark);">
-                    <ul style="list-style-type:none; padding:0px;">
-                    <li>$ ionic build --prod</li>
-                    <li>$ now --prod</li>
-                    </ul>
-                  </code>
                 </ion-item>
                 </ion-list>
             </div>
           </div>
           <p slot="end">
             <deckgo-highlight-code src="assets/code/pwa.jsx" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+            </deckgo-highlight-code>
+            <deckgo-highlight-code src="assets/code/pwa-deploy.txt" 
                     style="--deckgo-highlight-code-font-size: 18px">
             </deckgo-highlight-code>
           </p>
@@ -537,18 +554,15 @@
         <h2 slot="title">Create an Ionic App 🚀</h2>
         <div slot="content">
           <div style="padding: 32px;">
-            <code style="background-image: var(--ion-color-dark);" padding>
-              <ul style="list-style-type:none;">
-                <li>CLI:</li>
-                <li>$ npm install -g @ionic/cli</li>
-                <li>$ ionic start myApp --type react</li>
-              </ul>
-            </code>
+            <b style="font-size: 1.5em;">CLI:</b>
+            <deckgo-highlight-code src="assets/code/ionic-start.txt" 
+                    style="--deckgo-highlight-code-font-size: 18px">
+            </deckgo-highlight-code>
           </div>
 
           <p style="margin-bottom: 0; margin-top: 16px; font-size: 0.5em;">
             <ul style="list-style-type:none;">
-              <li>App Wizard:</li>
+              <li><b>App Wizard:</b></li>
               <li>
                 <a href="https://ionicframework.com/start">ionicframework.com/start</a>
               </li>
@@ -561,9 +575,10 @@
           </p>
 
           <div id="twitter-share" class="animated bounceInUp">
-            <a href="https://twitter.com/IonicFramework?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @IonicFramework</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/IonicFramework?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @IonicFramework</a>
+            <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
             
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Give a presentation on Ionic React!" data-url="https://github.com/ionic-team/present-ionic-react" data-via="IonicFramework" data-hashtags="PresentIonic" data-show-count="false">Share</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Give a presentation on Ionic React!" data-url="https://github.com/ionic-team/present-ionic-react" data-via="IonicFramework" data-hashtags="PresentIonic" data-show-count="false">Share</a>
           </div>
         </div>
       </deckgo-slide-title>
