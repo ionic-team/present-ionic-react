@@ -55,6 +55,10 @@ h3 {
     letter-spacing: -0.016em;
 }
 
+img {
+    object-fit: contain;
+}
+
 a {
     color: #3880FF !important;
     font-weight: 400 !important;
