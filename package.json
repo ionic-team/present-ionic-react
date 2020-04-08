@@ -11,7 +11,7 @@
     "watch-no-remote": "webpack --watch --mode development --env.no-remote=true",
     "build": "webpack --mode production",
     "local": "concurrently --kill-others \"webpack --watch --mode development --env.local=true\" \"npm run dev\"",
-    "deploy": "./deploy.sh"
+    "deploy": "npm run build && ./deploy.sh"
   },
   "author": {
     "name": "David Dal Busco",
