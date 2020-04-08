@@ -1,44 +1,36 @@
-# DeckDeckGo - Starter Kit
+# Ionic Present: React
 
-Create a PWA presentation using Web Components, [Ionic](http://ionicframework.com) components and HTML or Markdown 🚀
+Deliver a talk or run a meetup using this pre-built presentation covering Ionic React.
 
-Cherry on the cake 🍒🎂 [DeckDeckGo] comes with a [Progressive Web App](https://deckdeckgo.app) to remote control your slides 📱
+Simply clone this repository, add your info to the "About Me" slide, then present! 🎉
 
-## Table of contents
+The best part? This is a progressive web app (PWA) built using Web Components and [Ionic Framework](http://ionicframework.com) components. 🚀
 
-- [Starter Kit](#starter-kit)
-- [Getting Started](#getting-started)
-- [Example](#example)
-- [Develop](#develop)
-- [License](#license)
+View it live here: [https://present-react.ionicframework.com/](https://present-react.ionicframework.com/)
 
-## Starter Kit
+## How to Use
 
-This project is the starter kit of [DeckDeckGo].
-
-Its master branch contains the `HTML` starter kit. The markdown branch is the `Markdown` one.
-
-## Getting Started
-
-Start you new presentation by following the quick  👉 [Getting Started guide](https://docs.deckdeckgo.com/docs) 👈
-
-## Example
-   
-The [DeckDeckGo website](https://github.com/deckgo/deckdeckgo-website) is a full featured presentation developed with [DeckDeckGo].
-
-## Develop
-
-To develop and run this starter kit locally, proceed as following:
+To develop and run locally, just clone the repository, install all dependencies, then start it on localhost:
 
 ```
-git clone https://github.com/deckgo/deckdeckgo-starter
-cd deckdeckgo-starter
+git clone https://github.com/ionic-team/present-ionic-react
+cd present-ionic-react
 npm install
 npm run start
 ```
 
-## License
+This deck can be presented locally (`npm run start`) or hosted online using any static site provider. Ionic recommends [Zeit](https://zeit.co).
 
-MIT © [David Dal Busco](mailto:david.dalbusco@outlook.com) and [Nicolas Mattia](nicolas@nmattia.com)
+## Presentation Tips
 
-[DeckDeckGo]: https://deckdeckgo.com
+* Add your info to the "About Me" slide.
+* Each slide contains speaking notes (found in the "notes" slot) - use these as a reference.
+* Use the [DeckDeckGo PWA](https://deckdeckgo.app) to control your slides remotely from a mobile device. Open the presentation on a computer, open the DDG PWA on a mobile device, then start presenting!
+
+## Implementation Details
+
+All slides are located in `index.html`. This presentation was built with [DeckDeckGo](https://deckdeckgo.com) - see [the docs](https://docs.deckdeckgo.com) for information on editing slides, components configuration details, etc.
+
+## Feedback?
+
+Send a note over to [devrel@ionicframework.com](mailto:devrel@ionicframework.com).

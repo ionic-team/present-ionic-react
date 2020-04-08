@@ -10,6 +10,7 @@ import './css/alert.css';
 import './css/img.css';
 import './css/button.css';
 import './css/custom.css';
+import './css/demo.css';
 
 import '../node_modules/@deckdeckgo/deck-utils/styles/deckdeckgo-deck.css';
 import '../node_modules/@deckdeckgo/deck-utils/styles/deckdeckgo-deck-fonts.css';

@@ -1,13 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
 :root {
-    --ion-text-color: var(--ion-color-primary);
     --ion-header-size: 40px;
+    --ion-font-family: Inter, 'Inter UI', Helvetica, Arial, sans-serif;
 }
 
 ion-content {
     --ion-background-color: transparent;
 }
 
+ion-item {
+    --color: #445B78;
+}
+
+ion-label {
+    font-weight: 400 !important;
+    letter-spacing: -0.016em;
+}
+
+p {
+    color: #445B78;
+    font-weight: 400 !important;
+    letter-spacing: -0.016em;
+}
+
 ion-fab {
     direction: ltr;
     display: flex;
+}
+
+ion-content deckgo-slide-split > *[slot="start"] {
+    align-items: flex-start;
+    text-align: left;
+}
+
+h1, h2 {
+    color: #010610;
+    font-weight: 700 !important;
+    letter-spacing: -0.016em;
+}
+
+deckgo-slide-content div h2 {
+    padding-top: 20%;
+}
+
+/* Arrange each social icon onto separate line and apply spacing between each */
+deckgo-social {
+    padding-top: 30px;
+}
+
+h3 {
+    color: #445B78 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.016em;
+}
+
+img {
+    object-fit: contain;
+}
+
+a {
+    color: #3880FF !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.016em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.apps-card ion-list ion-thumbnail {
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    --border-radius: 14px;
+}
+
+.apps-card h3 {
+    padding: 0px;
 }
