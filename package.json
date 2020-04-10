@@ -1,8 +1,8 @@
 {
-  "name": "deckdeckgo-starter",
-  "version": "1.0.0-rc.7",
-  "description": "The Progressive Web App alternative for simple presentations",
-  "homepage": "https://deckdeckgo.com",
+  "name": "present-ionic-react",
+  "version": "1.0.0",
+  "description": "Deliver a talk or run a meetup using this pre-built presentation covering Ionic React.",
+  "homepage": "https://present-react.ionicframework.com/",
   "scripts": {
     "start": "concurrently --kill-others \"npm run watch\" \"npm run dev\"",
     "start-no-remote": "concurrently --kill-others \"npm run watch-no-remote\" \"npm run dev\"",
@@ -14,13 +14,13 @@
     "deploy": "npm run build && ./deploy.sh"
   },
   "author": {
-    "name": "David Dal Busco",
-    "email": "david.dalbusco@outlook.com",
-    "web": "https://fluster.io"
+    "name": "Ionic",
+    "email": "devrel@ionicframework.com",
+    "web": "https://ionicframework.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/deckgo/deckdeckgo-starter.git"
+    "url": "git://github.com/ionic-team/present-ionic-react.git"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
@@ -76,6 +76,8 @@
     "presentation",
     "slides",
     "slideshow",
-    "talk"
+    "talk",
+    "react",
+    "capacitor"
   ]
 }
