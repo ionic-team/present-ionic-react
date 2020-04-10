@@ -4,7 +4,7 @@ Deliver a talk or run a meetup using this pre-built presentation covering Ionic 
 
 Simply clone this repository, add your info to the "About Me" slide, then present! 🎉
 
-The best part? This is a progressive web app (PWA) built using Web Components and [Ionic Framework](http://ionicframework.com) components. 🚀
+The best part? This is a progressive web app (PWA) built using Web Components and [Ionic Framework](https://ionicframework.com) components. 🚀
 
 View it live here: [https://present-react.ionicframework.com/](https://present-react.ionicframework.com/)
 
