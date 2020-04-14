@@ -79,3 +79,9 @@ a:link {
 .apps-card h3 {
     padding: 0px;
 }
+
+@media(min-width: 992px) {
+    body deckgo-deck h2 {
+        font-size: 48px;
+    }
+}
