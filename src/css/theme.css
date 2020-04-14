@@ -80,6 +80,12 @@ a:link {
     padding: 0px;
 }
 
+@media(max-width: 768px) {
+    body deckgo-deck h2 {
+        font-size: 22px;
+    }
+}
+
 @media(min-width: 992px) {
     body deckgo-deck h2 {
         font-size: 48px;
