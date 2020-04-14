@@ -26,7 +26,6 @@ import './scripts/loading.js';
 import './scripts/slider.js';
 import './scripts/sliderJumpTo.js';
 import './scripts/modalNotes.js';
-import './scripts/modalRemoteControl.js';
 import './scripts/remoteControl.js';
 import './scripts/actions.js';
 import './scripts/menu.js';
@@ -34,12 +33,13 @@ import './scripts/history.js';
 import './scripts/fullscreen.js';
 import './scripts/resize.js';
 import './scripts/actionPlayPause.js';
+import './scripts/remotePopover.js';
 
 import { defineCustomElements as ionicElements } from '@ionic/core/loader';
-ionicElements(window);
+ionicElements();
 
 import { defineCustomElements as ioniconsElements } from 'ionicons/dist/loader';
-ioniconsElements(window);
+ioniconsElements();
 
 // Init DeckDeckGo elements
 import { defineCustomElements as deckDeckGoElements } from '@deckdeckgo/core/dist/loader';
@@ -57,6 +57,7 @@ import {defineCustomElements as deckDeckGoSlideQRCodeElements } from '@deckdeckg
 import {defineCustomElements as deckDeckGoSlideBigImgElements } from '@deckdeckgo/slide-big-img/dist/loader';
 import {defineCustomElements as deckDeckGoSlideVideoElements } from '@deckdeckgo/slide-video/dist/loader';
 import {defineCustomElements as deckDeckGoSlidePollElements } from '@deckdeckgo/slide-poll/dist/loader';
+import {defineCustomElements as deckDeckGoSlideAspectRatioElements } from '@deckdeckgo/slide-aspect-ratio/dist/loader';
 
 import { defineCustomElements as deckDeckGoRemoteElements } from '@deckdeckgo/remote/dist/loader';
 import { defineCustomElements as deckDeckGoChartsElements } from '@deckdeckgo/charts/dist/loader';
@@ -65,33 +66,36 @@ import { defineCustomElements as deckDeckGoHighlightCodeElements } from '@deckde
 import { defineCustomElements as deckDeckGoLazyImgElements } from '@deckdeckgo/lazy-img/dist/loader';
 import { defineCustomElements as deckDeckGoSocialElements } from '@deckdeckgo/social/dist/loader';
 import { defineCustomElements as deckDeckGoYoutubeElements } from '@deckdeckgo/youtube/dist/loader';
+import { defineCustomElements as deckDeckGoDragResizeRotateElements } from '@deckdeckgo/drag-resize-rotate/dist/loader';
 
 // Init web-social-share
 import { defineCustomElements as webSocialShareElements } from 'web-social-share/dist/loader';
 
-deckDeckGoElements(window).then(async () => {
-    await deckDeckGoChartsElements(window);
-    await deckDeckGoQRCodeElements(window);
-    await deckDeckGoHighlightCodeElements(window);
-    await deckDeckGoLazyImgElements(window);
-    await deckDeckGoSocialElements(window);
-    await deckDeckGoYoutubeElements(window);
+deckDeckGoElements().then(async () => {
+    await deckDeckGoChartsElements();
+    await deckDeckGoQRCodeElements();
+    await deckDeckGoHighlightCodeElements();
+    await deckDeckGoLazyImgElements();
+    await deckDeckGoSocialElements();
+    await deckDeckGoYoutubeElements();
+    await deckDeckGoDragResizeRotateElements();
 
     const promises = [];
 
-    promises.push(deckDeckGoSlideTitleElements(window));
-    promises.push(deckDeckGoSlideContentElements(window));
-    promises.push(deckDeckGoSlideAuthorElements(window));
-    promises.push(deckDeckGoSlideChartElements(window));
-    promises.push(deckDeckGoSlideYoutubeElements(window));
-    promises.push(deckDeckGoSlideSplitElements(window));
-    promises.push(deckDeckGoSlideCodeElements(window));
-    promises.push(deckDeckGoSlideCountdownElements(window));
-    promises.push(deckDeckGoSlideGifElements(window));
-    promises.push(deckDeckGoSlideQRCodeElements(window));
-    promises.push(deckDeckGoSlideBigImgElements(window));
-    promises.push(deckDeckGoSlideVideoElements(window));
-    promises.push(deckDeckGoSlidePollElements(window));
+    promises.push(deckDeckGoSlideTitleElements());
+    promises.push(deckDeckGoSlideContentElements());
+    promises.push(deckDeckGoSlideAuthorElements());
+    promises.push(deckDeckGoSlideChartElements());
+    promises.push(deckDeckGoSlideYoutubeElements());
+    promises.push(deckDeckGoSlideSplitElements());
+    promises.push(deckDeckGoSlideCodeElements());
+    promises.push(deckDeckGoSlideCountdownElements());
+    promises.push(deckDeckGoSlideGifElements());
+    promises.push(deckDeckGoSlideQRCodeElements());
+    promises.push(deckDeckGoSlideBigImgElements());
+    promises.push(deckDeckGoSlideVideoElements());
+    promises.push(deckDeckGoSlidePollElements());
+    promises.push(deckDeckGoSlideAspectRatioElements());
 
     await Promise.all(promises);
 
@@ -102,9 +106,9 @@ deckDeckGoElements(window).then(async () => {
     await postLoadingJumpTo();
     await initDeckHistoryWatch();
 
-    await webSocialShareElements(window);
+    await webSocialShareElements();
 
-    deckDeckGoRemoteElements(window).then(async () => {
+    deckDeckGoRemoteElements().then(async () => {
         await initRemote();
     });
 });
