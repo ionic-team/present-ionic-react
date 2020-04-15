@@ -1,0 +1,2 @@
+$ ionic build --prod
+$ now --prod
