@@ -127,15 +127,16 @@
         <deckgo-slide-author img-src="assets/img/ionitron.png">
           <div slot="notes" show>Add your details here.</div>
           <h1 slot="title">My Name</h1>
-          <div slot="author">
+          <div slot="author" style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
             <h2>My Name</h2>
-            <p style="padding: 8px; margin: 0;">A bit about me/bio</p>
+            <p style="padding: 8px; margin-top: 0;">A bit about me/bio</p>
+
+            <deckgo-social twitter="ionicframework"><ion-icon alt="Me on Twitter" slot="icon" name="logo-twitter"></ion-icon></deckgo-social>
+            <deckgo-social linkedin="maxlynch"><ion-icon alt="Me on Linkedin" slot="icon" name="logo-linkedin"></ion-icon></deckgo-social>
+            <deckgo-social full-url="https://ionicframework.com"><ion-icon alt="Me Blog" slot="icon" name="book-outline"></ion-icon></deckgo-social>
+            <deckgo-social dev="ionic"><ion-icon alt="Me on DEV.to" slot="icon" name="code-outline"></ion-icon></deckgo-social>
+            <deckgo-social github="ionic-team"><ion-icon alt="My GitHub" slot="icon" name="logo-github"></ion-icon></deckgo-social>
           </div>
-          <deckgo-social slot="social-link" twitter="ionicframework"><ion-icon alt="Me on Twitter" slot="icon" name="logo-twitter"></ion-icon></deckgo-social>
-          <deckgo-social slot="social-link" linkedin="maxlynch"><ion-icon alt="Me on Linkedin" slot="icon" name="logo-linkedin"></ion-icon></deckgo-social>
-          <deckgo-social slot="social-link" full-url="https://ionicframework.com"><ion-icon alt="Me Blog" slot="icon" name="book-outline"></ion-icon></deckgo-social>
-          <deckgo-social slot="social-link" dev="ionic"><ion-icon alt="Me on DEV.to" slot="icon" name="code-outline"></ion-icon></deckgo-social>
-          <deckgo-social slot="social-link" github="ionic-team"><ion-icon alt="My GitHub" slot="icon" name="logo-github"></ion-icon></deckgo-social>
         </deckgo-slide-author>
 
         <deckgo-slide-split>
