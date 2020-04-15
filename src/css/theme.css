@@ -79,3 +79,31 @@ a:link {
 .apps-card h3 {
     padding: 0px;
 }
+
+@media(max-width: 768px) {
+    body deckgo-deck h2 {
+        font-size: 22px;
+    }
+}
+
+@media(min-width: 992px) {
+    body deckgo-deck h2 {
+        font-size: 48px;
+    }
+}
+
+deckgo-highlight-code {
+    --deckgo-highlight-code-font-size: 16px;
+}
+
+@media(max-width: 768px) {
+    deckgo-highlight-code {
+        --deckgo-highlight-code-font-size: 10px;
+    }
+}
+
+@media(min-width: 992px) {
+    deckgo-highlight-code {
+        --deckgo-highlight-code-font-size: 18px;
+    }
+}

@@ -127,26 +127,15 @@
         <deckgo-slide-author img-src="assets/img/ionitron.png">
           <div slot="notes" show>Add your details here.</div>
           <h1 slot="title">My Name</h1>
-          <div slot="author">
+          <div slot="author" style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;">
             <h2>My Name</h2>
-            <p>A bit about me/bio</p>
-            <div style="padding-top: 64px;">
-              <deckgo-social twitter="ionicframework"> 
-                <ion-icon alt="Me on Twitter" slot="icon" name="logo-twitter"></ion-icon>
-              </deckgo-social>
-              <deckgo-social linkedin="maxlynch">
-                <ion-icon alt="Me on Linkedin" slot="icon" name="logo-linkedin"></ion-icon>
-              </deckgo-social>
-              <deckgo-social full-url="https://ionicframework.com">
-                <ion-icon alt="My Blog" slot="icon" name="book-outline"></ion-icon>
-              </deckgo-social>
-              <deckgo-social dev="ionic">
-                <ion-icon alt="Me on DEV.to" slot="icon" name="code-outline"></ion-icon>
-              </deckgo-social>
-              <deckgo-social github="ionic-team">
-                <ion-icon alt="My GitHub" slot="icon" name="logo-github"></ion-icon>
-              </deckgo-social>
-            </div>
+            <p style="padding: 8px; margin-top: 0;">A bit about me/bio</p>
+
+            <deckgo-social twitter="ionicframework"><ion-icon alt="Me on Twitter" slot="icon" name="logo-twitter"></ion-icon></deckgo-social>
+            <deckgo-social linkedin="maxlynch"><ion-icon alt="Me on Linkedin" slot="icon" name="logo-linkedin"></ion-icon></deckgo-social>
+            <deckgo-social full-url="https://ionicframework.com"><ion-icon alt="Me Blog" slot="icon" name="book-outline"></ion-icon></deckgo-social>
+            <deckgo-social dev="ionic"><ion-icon alt="Me on DEV.to" slot="icon" name="code-outline"></ion-icon></deckgo-social>
+            <deckgo-social github="ionic-team"><ion-icon alt="My GitHub" slot="icon" name="logo-github"></ion-icon></deckgo-social>
           </div>
         </deckgo-slide-author>
 
@@ -337,8 +326,7 @@
             </ion-card>
           </div>
           <p slot="end">
-            <deckgo-highlight-code src="assets/code/card.jsx" 
-                  style="--deckgo-highlight-code-font-size: 16px">
+            <deckgo-highlight-code src="assets/code/card.jsx">
             </deckgo-highlight-code>
           </p>
         </deckgo-slide-split>
@@ -372,7 +360,7 @@
               </ion-list>
           </div>
         </div>
-          <video slot="end" autoplay muted loop>
+          <video slot="end" autoplay muted loop style="width: 100%;">
             <source src="assets/video/large-title-dark.mov">
           </video>
         </deckgo-slide-split>
@@ -395,7 +383,7 @@
               </ion-list>
           </div>
         </div>
-          <video slot="end" autoplay muted loop>
+          <video slot="end" autoplay muted loop style="width: 100%;">
             <source src="assets/video/modal-light.mov">
           </video>
         </deckgo-slide-split>
@@ -420,8 +408,7 @@
             </div>
           </div>
           <p slot="end">
-            <deckgo-highlight-code src="assets/code/routing-app.jsx" 
-              style="--deckgo-highlight-code-font-size: 18px">
+            <deckgo-highlight-code src="assets/code/routing-app.jsx">
             </deckgo-highlight-code>
           </p>
         </deckgo-slide-split>
@@ -450,8 +437,7 @@
             </div>
           </div>
           <p slot="end">
-            <deckgo-highlight-code src="assets/code/test-todos.jsx" 
-                    style="--deckgo-highlight-code-font-size: 18px">
+            <deckgo-highlight-code src="assets/code/test-todos.jsx">
             </deckgo-highlight-code>
           </p>
         </deckgo-slide-split>
@@ -480,11 +466,9 @@
             </div>
           </div>
           <p slot="end">
-            <deckgo-highlight-code src="assets/code/pwa.jsx" 
-                    style="--deckgo-highlight-code-font-size: 18px">
+            <deckgo-highlight-code src="assets/code/pwa.jsx">
             </deckgo-highlight-code>
-            <deckgo-highlight-code src="assets/code/pwa-deploy.txt" 
-                    style="--deckgo-highlight-code-font-size: 18px">
+            <deckgo-highlight-code src="assets/code/pwa-deploy.txt">
             </deckgo-highlight-code>
           </p>
         </deckgo-slide-split>
@@ -519,8 +503,7 @@
             <a href="https://capacitor.ionicframework.com" target="_blank" style="padding-left: 17px; padding-top: 50px;">capacitor.ionicframework.com</a>
           </div>
           <p slot="end">
-            <deckgo-highlight-code src="assets/code/capacitor.ts" 
-                    style="--deckgo-highlight-code-font-size: 18px">
+            <deckgo-highlight-code src="assets/code/capacitor.ts">
             </deckgo-highlight-code>
           </p>
         </deckgo-slide-split>
@@ -558,8 +541,7 @@
         <div slot="content">
           <div style="padding: 32px;">
             <b style="font-size: 1.5em;">CLI:</b>
-            <deckgo-highlight-code src="assets/code/ionic-start.txt" 
-                    style="--deckgo-highlight-code-font-size: 18px">
+            <deckgo-highlight-code src="assets/code/ionic-start.txt">
             </deckgo-highlight-code>
           </div>
 
@@ -654,6 +636,11 @@
       <button id="fullScreen" class="navigation ion-activatable hide-on-mobile">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon name="expand" aria-label="Full screen" style="font-size: 1.4em;"></ion-icon>
+      </button>
+
+      <button id="remote" class="navigation ion-activatable">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon name="phone-portrait-outline" aria-label="Open Remote" style="font-size: 1.4em;"></ion-icon>
       </button>
     </ion-fab>
 
