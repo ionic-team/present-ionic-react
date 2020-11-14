@@ -25,8 +25,19 @@ const config = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 100000
+                }
             }
         ]
+    },
+    devServer: {
+        open: true,
+        port: 3000
     }
 };
 
@@ -41,12 +52,14 @@ const plugins = [
         path: path.join(__dirname, '../dist/'),
         filename: 'index.html'
     }),
-    new CopyWebpackPlugin([
-        {from: 'src/assets/', to: 'assets'},
-        {from: 'src/manifest.json', to: ''},
-        {from: 'src/robots.txt', to: ''},
-        {from: 'node_modules/ionicons/dist/ionicons/svg/', to: 'svg'}
-    ]),
+    new CopyWebpackPlugin({
+        patterns: [
+            {from: 'src/assets/', to: 'assets'},
+            {from: 'src/manifest.json', to: ''},
+            {from: 'src/robots.txt', to: ''},
+            {from: 'node_modules/ionicons/dist/ionicons/svg/', to: 'svg'}
+        ]
+    }),
     new ProgressBarPlugin()
 ];
 
@@ -61,7 +74,7 @@ module.exports = (env, argv) => {
             ignoreURLParametersMatching: [/./],
 
             runtimeCaching: [{
-                urlPattern: new RegExp(/^(?!.*giphy)(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/),
+                urlPattern: new RegExp(/^(?!.*(?:unsplash|giphy|tenor|firebasestorage))(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/),
                 handler: 'CacheFirst',
                 options: {
                     cacheName: 'images',
@@ -71,14 +84,17 @@ module.exports = (env, argv) => {
                     },
                 }
             },{
-                urlPattern: new RegExp(/^(?=.*giphy)(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/),
+                urlPattern: new RegExp(/^(?=.*(?:unsplash|giphy|tenor|firebasestorage))(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/),
                 handler: 'StaleWhileRevalidate',
                 options: {
-                    cacheName: 'images',
+                    cacheName: 'cors-images',
                     expiration: {
                         maxEntries: 60,
                         maxAgeSeconds: 30 * 24 * 60 * 60 // 30 days
                     },
+                    cacheableResponse: {
+                        statuses: [0, 200]
+                    }
                 }
             }]
         }));
