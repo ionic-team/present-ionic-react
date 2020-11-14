@@ -92,18 +92,6 @@ a:link {
     }
 }
 
-deckgo-highlight-code {
-    --deckgo-highlight-code-font-size: 16px;
-}
-
-@media(max-width: 768px) {
-    deckgo-highlight-code {
-        --deckgo-highlight-code-font-size: 10px;
-    }
-}
-
-@media(min-width: 992px) {
-    deckgo-highlight-code {
-        --deckgo-highlight-code-font-size: 18px;
-    }
+deckgo-highlight-code, video, deckgo-slide-split img {
+    max-height: calc(100vh - 128px);
 }
