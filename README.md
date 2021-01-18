@@ -19,7 +19,7 @@ npm install
 npm run start
 ```
 
-This deck can be presented locally (`npm run start`) or hosted online using any static site provider. Ionic recommends [Zeit](https://zeit.co).
+This deck can be presented locally (`npm run start`) or hosted online using any static site provider. Ionic recommends [Vercel](https://vercel.com).
 
 ## Presentation Tips
 
